@@ -9,13 +9,13 @@ let { Marketplace } = createMarketplaceContractInstance();
 async function listNftForAuction(
   tokenId,
   listingType,
-  fixedPrice,
+  floorPrice,
   duration = 0
 ) {
   const listTransaction = await Marketplace.listItem(
     tokenId,
     listingType,
-    fixedPrice,
+    floorPrice,
     duration,
     {
       gasLimit: "3000000",
