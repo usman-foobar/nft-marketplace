@@ -4,12 +4,12 @@ const { NftContract } = createNftContractInstance();
 // Add a function to mint ERC-721 NFTs (Only Minter)
 
 async function listNftForFixedPrice(toAddress) {
-  const listTransaction = await NftContract.mint(toAddress, {
+  const mintTransaction = await NftContract.mint(toAddress, {
     gasLimit: "3000000",
   });
-  await listTransaction.wait();
+  await mintTransaction.wait();
   console.log(
-    `Transaction Completed! Check it out at: https://goerli.etherscan.io/tx//${listTransaction.hash}`
+    `Transaction Completed! Check it out at: https://goerli.etherscan.io/tx//${mintTransaction.hash}`
   );
 }
 
